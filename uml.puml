@@ -1,0 +1,229 @@
+@startuml
+
+abstract class PhysicalObject{
+String name
+
+getName() : String
+move()
+}
+
+class Key extends PhysicalObject{
+exists : boolean
+}
+
+class Rnd{
+rndIntellect()
+rndMood()
+rndChance()
+}
+
+class Person extends PhysicalObject{
++dna : String
++profession: Profession
++location : GroundLocation
++intelligence : byte
++mood : Mood
+
+
+
++ talk() : void
++ openRocket() : void
+move()
+}
+
+interface Transport{
+startEngine() : void
+stopEngine() : void
+}
+
+
+interface Scientist{
+explore() : void
+explore() : void
+}
+
+
+interface Lounger{
+doNothing(): void
+}
+
+class Doctor extends Person implements Scientist{
+}
+
+class Znayka extends Person implements Scientist{}
+
+class Neznayka extends Person implements Lounger{
+
+}
+
+class SpaceObject extends PhysicalObject{
+
++location: SpaceLocation
++dye: Color
+}
+
+
+class Planet extends SpaceObject{
++ illuminate(): void
+
+}
+
+class Star extends SpaceObject{
++ light: Light
++ illuminate(): void
+}
+
+class Sky extends SpaceObject{
++ changeColor() : void
+}
+class MoonObject extends PhysicalObject{
++ changeColor() : void
++ location: GroundLocation
++ dye: Color
+
+}
+
+class Rock extends MoonObject{
+
++ shine()
+}
+class Rocket extends MoonObject implements Transport{
++pilot: String
++started: boolean
++ addPilot
+}
+
+
+object znayka{
+dna = 314
+name = Znayka
+profession = SCIENTIST
+intellect = random
+location = CAVE
+Mood = random
+
+}
+object doctorPilulkin{
+dna = 1109
+name = DoctorPilulkin
+profession = SCIENTIST
+intellect = random
+location = CAVE
+Mood = random
+}
+
+object neznayka{
+dna = 220
+name = Neznayka
+profession = LOUNGER
+intellect = random
+location = rnd
+Mood = random
+
+}
+object rocket{
+name = RockSkalaJOnes
+pilot = none
+location = FIELD
+dye = METALLIC
+}
+object mountainChain
+object ground
+object earth{
+name = Earth
+location = CLOSESPACE
+dye = BLUE
+}
+object sun{
+name = Sun
+location = FARSPACE
+dye = YELLOW
+lightning = OBLIQUTE
+}
+object sky{
+name = Sky
+location = CLOSESPACE
+dye = BLUE
+}
+object stars{
+name = Galaxy
+location = FARSPACE
+dye = WHITE
+lightning = STRAIGHT
+}
+
+object key{
+name = key
+exists = random
+}
+
+enum GroundLocation{
+CAVE
+FIELD
+MOUNTAIN
+HORIZON
+ROCKET
+NONE
+}
+
+enum Profession{
+SCIENTIST
+LOUNGER
+JOURNALIST
+NONE
+
+}
+enum Color{
+DARKRED
+RED
+BLUE
+PURPLE
+GREEN
+METAL
+GRAY
+COLDBLUE
+NONE
+}
+
+enum SpaceLocation{
+FARSPACE
+CLOSESPACE
+NONE
+}
+
+enum Mood{
+GOOD
+BAD
+NEUTRAL
+NONE
+}
+
+enum Light{
+DIRECT
+OBLIQUE
+NONE
+}
+
+Doctor <-- doctorPilulkin
+Znayka <-- znayka
+Neznayka <-- neznayka
+Star <-- stars
+Star <-- sun
+Sky <-- sky
+Planet <-- earth
+Rock <-- mountainChain
+Rocket <-- rocket
+Rock <-- ground
+Key <-- key
+
+Person -- Profession
+Person -- GroundLocation
+SpaceObject -- Color
+SpaceObject -- SpaceLocation
+MoonObject -- GroundLocation
+MoonObject -- Color
+Person -- Mood
+Star -- Light
+
+
+@enduml
