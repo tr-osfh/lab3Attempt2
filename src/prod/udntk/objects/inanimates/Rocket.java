@@ -26,6 +26,16 @@ public final class Rocket extends MoonObject implements Transport {
     }
 
 
+
+    public void fly(){
+        if (this.isStarted()) {
+            System.out.println(this.getName() + " взлетает");
+        } else {
+            System.out.println(this.getName() + "не может взлететь");
+        }
+    }
+
+
     @Override
     public void startEngine(){
         System.out.println(this.getPilot() + " заводит двигатель");
@@ -38,12 +48,9 @@ public final class Rocket extends MoonObject implements Transport {
         setStarted(false);
     }
 
-    public void fly(){
-        if (this.isStarted()) {
-            System.out.println(this.getName() + "взлетает");
-        } else {
-            System.out.println(this.getName() + "не может взлететь");
-        }
+    @Override
+    public void describe(){
+        System.out.println("Сверкающая рактеа с эиблемой Рос. космос");
     }
 
     public String getPilot() {

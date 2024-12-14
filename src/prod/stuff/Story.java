@@ -25,6 +25,7 @@ public final class Story {
         neznayka.move(GroundLocation.FIELD);
 
         sky.getMoves(0);
+        sky.describe();
 
 
         sun.illuminate();
@@ -39,6 +40,7 @@ public final class Story {
         if (neznayka.getMood() == Mood.BAD){
             neznayka.getMoves(0);
             znayka.getMoves(1);
+            neznayka.describe();
             try {
                 key.fall(GroundLocation.CAVE);
                 znayka.talk("Ты зачем ключ от ракеты в пещеру выкинул?", neznayka);
@@ -58,6 +60,7 @@ public final class Story {
 
             neznayka.move(GroundLocation.ROCKET);
             znayka.move(GroundLocation.ROCKET);
+            rocket.describe();
 
             try {
                 znayka.openRocket(key, rocket);

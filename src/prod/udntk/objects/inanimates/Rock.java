@@ -13,4 +13,5 @@ public final class Rock extends MoonObject {
     public void shine() {
         System.out.println(this.getName() + " блестит " + this.getDye().getType());
     }
+
 }

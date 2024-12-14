@@ -24,7 +24,7 @@ public class Key extends PhysicalObject {
 
     @Override
     public void describe(){
-        System.out.println("Блестящий ключ с эмблеммой роскосмоса");
+        System.out.println("Ключ с эмблеммой рос. космоса");
     }
 
     public void fall(GroundLocation location) throws NoKeyException{

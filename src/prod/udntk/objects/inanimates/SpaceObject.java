@@ -17,7 +17,7 @@ public class SpaceObject extends PhysicalObject {
 
     @Override
     public void describe(){
-        System.out.println(this.getName() + " есть на поверхности");
+        System.out.println(this.getName() + " где то высоко над головой");
     }
 
     public SpaceLocation getLocation() {
