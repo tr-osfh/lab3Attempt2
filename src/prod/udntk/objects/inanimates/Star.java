@@ -33,6 +33,11 @@ public final class Star extends SpaceObject{
 
     }
 
+    @Override
+    public void describe(){
+        System.out.println("Звезды сверкают в небе");
+    }
+
     public Light getLight() {
         return light;
     }

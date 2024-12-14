@@ -1,5 +1,6 @@
 package prod.udntk.objects.inanimates;
 
+import prod.stuff.exceptions.WrongMovement;
 import prod.udntk.enums.Color;
 import prod.udntk.enums.GroundLocation;
 import prod.udntk.interfaces.Transport;
@@ -18,6 +19,13 @@ public final class Rocket extends MoonObject implements Transport {
 
     }
 
+
+    public void addPilot(Person person){
+        System.out.println(person.getName() + " становится пилотом " + this.getName());
+        setPilot(person.getName());
+    }
+
+
     @Override
     public void startEngine(){
         System.out.println(this.getPilot() + " заводит двигатель");
@@ -30,9 +38,12 @@ public final class Rocket extends MoonObject implements Transport {
         setStarted(false);
     }
 
-    public void addPilot(Person person){
-        System.out.println(person.getName() + " становится пилотом " + this.getName());
-        setPilot(person.getName());
+    public void fly(){
+        if (this.isStarted()) {
+            System.out.println(this.getName() + "взлетает");
+        } else {
+            System.out.println(this.getName() + "не может взлететь");
+        }
     }
 
     public String getPilot() {

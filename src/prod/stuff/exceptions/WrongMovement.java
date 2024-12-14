@@ -7,7 +7,7 @@ public class WrongMovement extends RuntimeException {
 
     @Override
     public String getMessage(){
-        return "Космический объект не может перемещяться по земле";
+        return "Этот объект не может перемещяться по земле";
     }
 
 }

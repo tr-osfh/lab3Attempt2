@@ -12,8 +12,7 @@ public abstract class PhysicalObject {
         this.name = "";
     }
 
-    public abstract void move();
-    public abstract void move(GroundLocation location);
+    public abstract void describe();
 
     public final String getName() {
         return name;

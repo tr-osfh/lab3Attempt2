@@ -2,7 +2,7 @@ package prod.udntk.objects.persons;
 
 import prod.stuff.Moves;
 import prod.udntk.enums.Mood;
-import prod.udntk.enums.Professions;
+import prod.udntk.enums.Profession;
 import prod.udntk.interfaces.Scientist;
 import prod.udntk.objects.PhysicalObject;
 
@@ -10,7 +10,7 @@ public final class Doctor extends Person implements Scientist {
 
     public Doctor(Mood mood, byte intelligence){
         super.setName("Доктор Пилюлькин");
-        super.setProfession(Professions.LOUNGER);
+        super.setProfession(Profession.LOUNGER);
         super.setDna(1109);
 
         super.setMood(mood);

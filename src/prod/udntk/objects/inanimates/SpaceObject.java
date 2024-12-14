@@ -16,13 +16,8 @@ public class SpaceObject extends PhysicalObject {
     private Color dye;
 
     @Override
-    public void move(){
-
-    }
-
-    @Override
-    public void move(GroundLocation location) throws WrongMovement{
-        throw new WrongMovement("");
+    public void describe(){
+        System.out.println(this.getName() + " есть на поверхности");
     }
 
     public SpaceLocation getLocation() {

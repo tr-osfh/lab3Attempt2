@@ -26,7 +26,6 @@ public final class Planet extends SpaceObject{
         System.out.println(this.getName() + " освещяет " + this.getDye() + " светом");
     }
 
-    @Override
     public void move(){
         System.out.println(this.getName() + " перемещяется по небу");
     }

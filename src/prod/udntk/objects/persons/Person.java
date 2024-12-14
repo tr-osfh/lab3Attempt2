@@ -10,14 +10,14 @@ public class Person extends PhysicalObject {
 
     public Person(){
         this.dna = 0;
-        this.profession = Professions.NONE;
+        this.profession = Profession.NONE;
         this.location = GroundLocation.CAVE;
         this.intelligence = 0;
         this.mood = Mood.NONE;
     }
 
     private int dna;
-    private Professions profession;
+    private Profession profession;
     private GroundLocation location;
     private byte intelligence;
     private Mood mood;
@@ -36,18 +36,19 @@ public class Person extends PhysicalObject {
             rocket.setOpend(true);
             System.out.println(rocket.getName() + " открыта");
         } else {
-            throw new NoKeyException("");
+            throw new NoKeyException("Ключа нет");
         }
     }
 
-    @Override
-    public void move() {
-    }
 
-    @Override
     public void move(GroundLocation location) {
         System.out.println(this.getName() + " из " + this.getLocation().getType() + " идет в " + location.getType());
         this.setLocation(location);
+    }
+
+    @Override
+    public void describe(){
+        System.out.println(this.getProfession() + " " + this.getName() + " - стоит и задумчиво смотрит вдаль");
     }
 
     public int getDna() {
@@ -58,11 +59,11 @@ public class Person extends PhysicalObject {
         this.dna = dna;
     }
 
-    public Professions getProfession() {
+    public Profession getProfession() {
         return profession;
     }
 
-    public void setProfession(Professions profession) {
+    public void setProfession(Profession profession) {
         this.profession = profession;
     }
 

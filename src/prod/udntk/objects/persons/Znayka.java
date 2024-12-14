@@ -9,7 +9,7 @@ public final class Znayka extends Person implements Scientist {
 
     public Znayka(Mood mood, byte intelligence){
         super.setName("Знайка");
-        super.setProfession(Professions.SCIENTIST);
+        super.setProfession(Profession.SCIENTIST);
         super.setDna(314);
 
         super.setMood(mood);

@@ -24,12 +24,10 @@ public class MoonObject extends PhysicalObject {
     }
 
     @Override
-    public void move(){
+    public void describe(){
+        System.out.println(this.getName() + " виднеется в " + this.getLocation().getType());
     }
 
-    @Override
-    public void move(GroundLocation location) {
-    }
 
     public GroundLocation getLocation() {
         return location;

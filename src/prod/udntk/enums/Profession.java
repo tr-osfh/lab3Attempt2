@@ -1,6 +1,6 @@
 package prod.udntk.enums;
 
-public enum Professions {
+public enum Profession {
     SCIENTIST ("Ученый"),
     LOUNGER ("Бездельник"),
     JOURNALIST ("Журналист"),
@@ -8,7 +8,7 @@ public enum Professions {
 
     private String type;
 
-    Professions(String type){
+    Profession(String type){
         this.type = type;
     }
 

@@ -26,11 +26,6 @@ public final class Story {
 
         sky.getMoves(0);
 
-        try {
-            sky.move(GroundLocation.CAVE);
-        } catch (WrongMovement error) {
-            System.out.println(error);
-        }
 
         sun.illuminate();
         sun.illuminate(ground);
@@ -45,13 +40,16 @@ public final class Story {
             neznayka.getMoves(0);
             znayka.getMoves(1);
             try {
-                key.move(GroundLocation.CAVE);
+                key.fall(GroundLocation.CAVE);
                 znayka.talk("Ты зачем ключ от ракеты в пещеру выкинул?", neznayka);
                 neznayka.move(GroundLocation.CAVE);
                 neznayka.getMoves(2);
             }
             catch (NoKeyException error){
                 System.out.println(error);
+                neznayka.talk("А где собственно ключ?");
+                neznayka.move(GroundLocation.CAVE);
+                znayka.move(GroundLocation.CAVE);
             }
 
         } else {
@@ -65,7 +63,7 @@ public final class Story {
                 znayka.openRocket(key, rocket);
                 rocket.addPilot(znayka);
                 rocket.startEngine();
-                rocket.move();
+                rocket.fly();
             } catch (NoKeyException error) {
                 System.out.println(error);
                 neznayka.getMoves(3);

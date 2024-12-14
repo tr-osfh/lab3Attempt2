@@ -18,9 +18,8 @@ public final class Sky extends SpaceObject{
         System.out.println(this.getName() + " меняет цвет на " + dye);
     }
 
-
     @Override
-    public void move(){
-        System.out.println("Облака медленно плывут по небу.");
+    public void describe(){
+        System.out.printf("Облака медленно плывут по %s небу. \n", this.getDye().getType());
     }
 }
