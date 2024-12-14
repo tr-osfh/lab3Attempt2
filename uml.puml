@@ -9,7 +9,7 @@ describe(): void
 
 class Key extends PhysicalObject{
 exists : boolean
-fall : void
+fall() : void
 }
 
 class Person extends PhysicalObject{
