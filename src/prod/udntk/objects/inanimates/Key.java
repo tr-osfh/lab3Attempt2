@@ -13,20 +13,6 @@ public class Key extends PhysicalObject {
 
     private boolean exists;
 
-    public void fall(){
-        if (exists) {
-        System.out.println("Ключ пропал");
-        this.setExists(false);
-        } else {
-            throw new NoKeyException("ключа как нет так и не было");
-        }
-    }
-
-    @Override
-    public void describe(){
-        System.out.println("Ключ с эмблеммой рос. космоса");
-    }
-
     public void fall(GroundLocation location) throws NoKeyException{
         if (exists) {
             System.out.printf(this.getName() + "Провалился в %s\n", location.getType());
@@ -34,6 +20,11 @@ public class Key extends PhysicalObject {
         } else {
             throw new NoKeyException("Ключ уже потерян");
         }
+    }
+
+    @Override
+    public void describe(){
+        System.out.println("Ключ с эмблеммой рос. космоса");
     }
 
     public boolean isExists() {

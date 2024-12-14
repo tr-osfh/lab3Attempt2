@@ -9,12 +9,7 @@ describe(): void
 
 class Key extends PhysicalObject{
 exists : boolean
-}
-
-class Rnd{
-rndIntellect()
-rndMood()
-rndChance()
+fall : void
 }
 
 class Person extends PhysicalObject{
