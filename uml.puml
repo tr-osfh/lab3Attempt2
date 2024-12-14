@@ -4,7 +4,7 @@ abstract class PhysicalObject{
 String name
 
 getName() : String
-move()
+describe(): void
 }
 
 class Key extends PhysicalObject{
@@ -87,6 +87,8 @@ class Rocket extends MoonObject implements Transport{
 +pilot: String
 +started: boolean
 + addPilot
+
+fly() : void
 }
 
 
