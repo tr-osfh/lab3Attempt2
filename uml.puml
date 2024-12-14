@@ -123,8 +123,13 @@ pilot = none
 location = FIELD
 dye = METALLIC
 }
-object mountainChain
-object ground
+object mountainChain{
+name = Mountain Chain
+}
+
+object ground{
+name = Ground
+}
 object earth{
 name = Earth
 location = CLOSESPACE
