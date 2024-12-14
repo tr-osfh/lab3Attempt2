@@ -43,16 +43,12 @@ explore() : void
 }
 
 
-interface Lounger{
-doNothing(): void
-}
-
 class Doctor extends Person implements Scientist{
 }
 
 class Znayka extends Person implements Scientist{}
 
-class Neznayka extends Person implements Lounger{
+class Neznayka extends Person{
 
 }
 
