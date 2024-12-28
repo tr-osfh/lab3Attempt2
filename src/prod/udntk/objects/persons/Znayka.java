@@ -29,4 +29,39 @@ public final class Znayka extends Person implements Scientist {
         System.out.println(this.getName() + " изучает " + obj.getName());
     }
 
+
+    @Override
+    public int hashCode() {
+        int hs = 0;
+        char[] name = getName().toCharArray();
+        for (char i : name){
+            hs += i - '0' * (int) getIntelligence();
+        }
+        return hs;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return this.getDna() == person.getDna()
+                && this.getIntelligence() == person.getIntelligence()
+                && this.getProfession() == person.getProfession()
+                && this.getLocation() == person.getLocation()
+                && this.getMood() == person.getMood();
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "moves=" + moves +
+                ", mood=" + this.getMood() +
+                ", intelligence=" + this.getIntelligence() +
+                ", location=" + this.getLocation() +
+                ", profession=" + this.getProfession() +
+                ", dna=" + this.getDna() +
+                '}';
+    }
+
 }

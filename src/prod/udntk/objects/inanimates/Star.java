@@ -1,6 +1,5 @@
 package prod.udntk.objects.inanimates;
 
-import prod.stuff.exceptions.SameObjException;
 import prod.udntk.enums.Color;
 import prod.udntk.enums.Light;
 import prod.udntk.enums.SpaceLocation;
@@ -20,16 +19,12 @@ public final class Star extends SpaceObject{
         System.out.println(this.getName() + " освещяет " + this.getDye().getType() + " светом");
     }
 
-    public void illuminate(MoonObject obj) throws SameObjException{
-        if (obj.equals(this)){
-            throw new SameObjException("");
-        } else {
+    public void illuminate(MoonObject obj){
             obj.setDye(this.getDye());
             System.out.println(this.getName() + " освещяет " + obj.getName() + " " + obj.getDye().getType());
             System.out.println("лучи " + getLight().getType());
 
             System.out.printf("\nтеперь %s %s\n\n", obj.getName(), obj.getDye().getType());
-        }
 
     }
 

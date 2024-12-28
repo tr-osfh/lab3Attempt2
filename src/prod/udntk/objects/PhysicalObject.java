@@ -1,7 +1,6 @@
 package prod.udntk.objects;
 
 import prod.stuff.Moves;
-import prod.udntk.enums.GroundLocation;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,6 @@
 package prod.udntk.objects.inanimates;
 
+import prod.stuff.exceptions.RedundantPilot;
 import prod.stuff.exceptions.WrongMovement;
 import prod.udntk.enums.Color;
 import prod.udntk.enums.GroundLocation;
@@ -19,13 +20,10 @@ public final class Rocket extends MoonObject implements Transport {
 
     }
 
-
-    public void addPilot(Person person){
+    public void addPilot(Person person) throws RedundantPilot {
         System.out.println(person.getName() + " становится пилотом " + this.getName());
         setPilot(person.getName());
     }
-
-
 
     public void fly(){
         if (this.isStarted()) {
@@ -34,7 +32,6 @@ public final class Rocket extends MoonObject implements Transport {
             System.out.println(this.getName() + "не может взлететь");
         }
     }
-
 
     @Override
     public void startEngine(){

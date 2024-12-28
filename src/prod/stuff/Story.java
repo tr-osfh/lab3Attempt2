@@ -61,10 +61,11 @@ public final class Story {
             neznayka.move(GroundLocation.ROCKET);
             znayka.move(GroundLocation.ROCKET);
             rocket.describe();
-
             try {
                 znayka.openRocket(key, rocket);
-                rocket.addPilot(znayka);
+                try{
+                    rocket.addPilot(znayka);
+                } catch ()
                 rocket.startEngine();
                 rocket.fly();
             } catch (NoKeyException error) {

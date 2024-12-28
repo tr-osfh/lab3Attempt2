@@ -94,17 +94,20 @@ public class Person extends PhysicalObject {
     @Override
     public String toString() {
         return "Person{" +
-                "name=" + super.getName() +
-                "dna=" + dna +
+                ", mood=" + mood +
+                ", intelligence=" + intelligence +
+                ", location=" + location +
+                ", profession=" + profession +
+                ", dna=" + dna +
                 '}';
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        Person person = (Person) object;
-        return dna == person.dna;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return dna == person.dna && intelligence == person.intelligence && profession == person.profession && location == person.location && mood == person.mood;
     }
 
     @Override

@@ -10,7 +10,7 @@ public enum GroundLocation {
 
     private String type;
 
-    GroundLocation(String type){
+    GroundLocation(String type) {
         this.type = type;
     }
 
