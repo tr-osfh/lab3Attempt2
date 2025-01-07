@@ -1,6 +1,7 @@
 package prod.stuff;
 
 import prod.stuff.exceptions.NoKeyException;
+import prod.stuff.exceptions.RedundantPilot;
 import prod.stuff.exceptions.WrongMovement;
 import prod.udntk.enums.*;
 
@@ -8,6 +9,12 @@ import prod.udntk.objects.inanimates.*;
 import prod.udntk.objects.persons.*;
 
 public final class Story {
+
+    public static void startTest(){
+        Star sun = new Star("Солнце", SpaceLocation.FARSPACE, Color.RED, Light.DIRECT);
+        System.out.println(sun.hashCode());
+    }
+
     public static void startStory(){
         Znayka znayka = new Znayka(Rnd.moodValue(), Rnd.intellectValue());
         Neznayka neznayka = new Neznayka(Rnd.moodValue(), Rnd.intellectValue());
@@ -65,7 +72,9 @@ public final class Story {
                 znayka.openRocket(key, rocket);
                 try{
                     rocket.addPilot(znayka);
-                } catch ()
+                } catch (RedundantPilot error) {
+                    System.out.println(error);
+                }
                 rocket.startEngine();
                 rocket.fly();
             } catch (NoKeyException error) {

@@ -5,11 +5,11 @@ import prod.stuff.Moves;
 import java.util.ArrayList;
 
 public abstract class PhysicalObject {
-    private String name;
-
     public PhysicalObject(){
         this.name = "";
     }
+
+    private String name;
 
     public abstract void describe();
 

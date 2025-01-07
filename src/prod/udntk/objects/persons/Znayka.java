@@ -39,7 +39,6 @@ public final class Znayka extends Person implements Scientist {
         }
         return hs;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

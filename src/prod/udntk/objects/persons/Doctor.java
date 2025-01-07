@@ -19,14 +19,15 @@ public final class Doctor extends Person implements Scientist {
         super.moves.add(new Moves("Осматривается", "Смотрит по строрнам."));
     }
 
-    public void explore(PhysicalObject obj){
-        System.out.println(this.getName() + "осматривает" + obj.getName());
-    }
-
     @Override
     public void explore(){
         System.out.println(this.getName() + " оценивающе окидывает окружение взглядом");
     }
+
+    public void explore(PhysicalObject obj){
+        System.out.println(this.getName() + "осматривает" + obj.getName());
+    }
+
 
     @Override
     public int hashCode() {
