@@ -12,6 +12,7 @@ public final class Rocket extends MoonObject implements Transport {
     public Rocket(GroundLocation location, Color dye){
         super.setName("Ракета");
         this.setStarted(false);
+        this.setPilot("none");
         super.setLocation(location);
         super.setDye(dye);
     }
@@ -86,15 +87,13 @@ public final class Rocket extends MoonObject implements Transport {
         return this.getName() == rocket.getName()
                 && this.getLocation() == rocket.getLocation()
                 && this.getDye() == rocket.getDye()
-                && this.getPilot() == rocket.getPilot()
                 && started == rocket.started
-                && opend == rocket.opend
-                && Objects.equals(pilot, rocket.pilot);
+                && opend == rocket.opend;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getLocation(), getDye(), getPilot(), started, opend, pilot);
+        return Objects.hash(getName(), getLocation(), getDye(), started, opend, pilot);
     }
 
     @Override
@@ -102,7 +101,6 @@ public final class Rocket extends MoonObject implements Transport {
         return "Rocket{" +
                 "started=" + started +
                 ", opend=" + opend +
-                ", pilot='" + pilot + '\'' +
                 ", moves=" + moves +
                 '}';
     }
