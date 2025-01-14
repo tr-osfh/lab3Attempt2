@@ -10,8 +10,8 @@ import prod.udntk.objects.persons.*;
 public final class Story {
 
     public static void startTest(){
-        Star sun = new Star("Солнце", SpaceLocation.FARSPACE, Color.RED, Light.DIRECT);
-        System.out.println(sun.hashCode());
+        Key key1 = new Key("КЛюч", true);
+        Key key2 = new Key("ключ", true);
     }
 
     public static void startStory(){

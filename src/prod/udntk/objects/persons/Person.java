@@ -94,4 +94,12 @@ public class Person extends PhysicalObject {
         this.setLocation(location);
     }
 
+    @Override
+    protected String getAllMoves() {
+        String o = "";
+        for (int i = 0; i <= moves.size(); i++) {
+            o += moves.get(i);
+        }
+        return o;
+    }
 }

@@ -1,8 +1,6 @@
 package prod.udntk.objects.inanimates;
 
-import prod.stuff.exceptions.WrongMovement;
 import prod.udntk.enums.Color;
-import prod.udntk.enums.GroundLocation;
 import prod.udntk.enums.SpaceLocation;
 import prod.udntk.objects.PhysicalObject;
 

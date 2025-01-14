@@ -30,7 +30,8 @@ public final class Neznayka extends Person{
                 getDna(),
                 getIntelligence(),
                 getMood(),
-                getProfession());
+                getProfession(),
+                getAllMoves());
     }
 
     @Override
@@ -42,13 +43,14 @@ public final class Neznayka extends Person{
                 && this.getIntelligence() == person.getIntelligence()
                 && this.getProfession() == person.getProfession()
                 && this.getLocation() == person.getLocation()
-                && this.getMood() == person.getMood();
+                && this.getMood() == person.getMood()
+                && this.getAllMoves().equals(person.getAllMoves());
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "moves=" + moves +
+                "moves" + moves +
                 ", mood=" + this.getMood() +
                 ", intelligence=" + this.getIntelligence() +
                 ", location=" + this.getLocation() +
@@ -56,5 +58,4 @@ public final class Neznayka extends Person{
                 ", dna=" + this.getDna() +
                 '}';
     }
-
 }

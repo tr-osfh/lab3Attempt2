@@ -1,5 +1,6 @@
 package prod.udntk.objects.inanimates;
 
+import prod.stuff.Moves;
 import prod.stuff.exceptions.NoKeyException;
 import prod.udntk.enums.GroundLocation;
 import prod.udntk.objects.PhysicalObject;
@@ -8,12 +9,12 @@ import java.util.Objects;
 
 public class Key extends PhysicalObject {
 
+    private boolean exists;
+
     public Key(String name, boolean exists){
         this.setName(name);
         this.setExists(exists);
     }
-
-    private boolean exists;
 
     @Override
     public void describe(){
@@ -42,14 +43,16 @@ public class Key extends PhysicalObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Key key = (Key) o;
-        return exists == key.exists &&
-                getName() == key.getName() &&
-                moves == key.moves;
+        return exists == key.exists
+                && getName().equals(key.getName())
+                && this.getAllMoves().equals(key.getAllMoves());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), exists, moves);
+        return Objects.hash(getName(),
+                exists,
+                getAllMoves());
     }
 
     @Override

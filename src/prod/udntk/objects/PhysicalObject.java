@@ -30,4 +30,12 @@ public abstract class PhysicalObject {
     public void getMoves(int id){
         System.out.println(moves.get(id));
     }
+
+    protected String getAllMoves() {
+        String o = "";
+        for (int i = 0; i <= moves.size(); i++) {
+            o += moves.get(i);
+        }
+        return o;
+    }
 }

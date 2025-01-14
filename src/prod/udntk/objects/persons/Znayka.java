@@ -31,7 +31,6 @@ public final class Znayka extends Person implements Scientist {
         System.out.println(this.getName() + " изучает " + obj.getName());
     }
 
-
     @Override
     public int hashCode() {
         return Objects.hash(getName(),
@@ -39,7 +38,8 @@ public final class Znayka extends Person implements Scientist {
                 getDna(),
                 getIntelligence(),
                 getMood(),
-                getProfession());
+                getProfession(),
+                getAllMoves());
     }
 
     @Override
@@ -51,13 +51,14 @@ public final class Znayka extends Person implements Scientist {
                 && this.getIntelligence() == person.getIntelligence()
                 && this.getProfession() == person.getProfession()
                 && this.getLocation() == person.getLocation()
-                && this.getMood() == person.getMood();
+                && this.getMood() == person.getMood()
+                && this.getAllMoves().equals(person.getAllMoves());
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "moves=" + moves +
+                "moves" + moves +
                 ", mood=" + this.getMood() +
                 ", intelligence=" + this.getIntelligence() +
                 ", location=" + this.getLocation() +
@@ -65,5 +66,4 @@ public final class Znayka extends Person implements Scientist {
                 ", dna=" + this.getDna() +
                 '}';
     }
-
 }
