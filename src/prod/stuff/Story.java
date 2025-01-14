@@ -26,7 +26,7 @@ public final class Story {
         Star sun = new Star("Солнце", SpaceLocation.FARSPACE, Color.RED, Light.DIRECT);
         Star stars = new Star("Галакика", SpaceLocation.FARSPACE, Color.COLDBLUE, Light.OBLIQUE);
         Sky sky = new Sky(Color.BLUE);
-        Key key = new Key(Rnd.binChance());
+        Key key = new Key("Ключ", Rnd.binChance());
 
         znayka.move(GroundLocation.FIELD);
         neznayka.move(GroundLocation.FIELD);

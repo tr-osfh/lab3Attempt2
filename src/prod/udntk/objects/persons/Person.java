@@ -6,7 +6,15 @@ import prod.udntk.objects.PhysicalObject;
 import prod.udntk.objects.inanimates.Key;
 import prod.udntk.objects.inanimates.Rocket;
 
+import java.util.Objects;
+
 public class Person extends PhysicalObject {
+
+    private int dna;
+    private Profession profession;
+    private GroundLocation location;
+    private byte intelligence;
+    private Mood mood;
 
     public Person(){
         this.dna = 0;
@@ -16,40 +24,6 @@ public class Person extends PhysicalObject {
         this.mood = Mood.NONE;
     }
 
-    private int dna;
-    private Profession profession;
-    private GroundLocation location;
-    private byte intelligence;
-    private Mood mood;
-
-    public void talk(String phrase){
-        System.out.println(this.getName() + " говорит " + phrase);
-    }
-
-    public void talk(String phrase, Person person){
-        System.out.println(this.getName() + " говорит " + person.getName() + " : " + phrase);
-    }
-
-    public void openRocket(Key key, Rocket rocket) throws NoKeyException{
-        System.out.println(getName() + " пытается открыть ракету ключем");
-        if (key.isExists()){
-            rocket.setOpend(true);
-            System.out.println(rocket.getName() + " открыта");
-        } else {
-            throw new NoKeyException("Ключа нет");
-        }
-    }
-
-
-    public void move(GroundLocation location) {
-        System.out.println(this.getName() + " из " + this.getLocation().getType() + " идет в " + location.getType());
-        this.setLocation(location);
-    }
-
-    @Override
-    public void describe(){
-        System.out.println(this.getProfession() + " " + this.getName() + " - стоит и задумчиво смотрит вдаль");
-    }
 
     public int getDna() {
         return dna;
@@ -91,27 +65,33 @@ public class Person extends PhysicalObject {
         this.mood = mood;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                ", mood=" + mood +
-                ", intelligence=" + intelligence +
-                ", location=" + location +
-                ", profession=" + profession +
-                ", dna=" + dna +
-                '}';
-    }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return dna == person.dna && intelligence == person.intelligence && profession == person.profession && location == person.location && mood == person.mood;
+    public void describe(){
+        System.out.println(this.getProfession() + " " + this.getName() + " - стоит и задумчиво смотрит вдаль");
     }
 
-    @Override
-    public int hashCode() {
-        return dna;
+    public void talk(String phrase){
+        System.out.println(this.getName() + " говорит " + phrase);
     }
+
+    public void talk(String phrase, Person person){
+        System.out.println(this.getName() + " говорит " + person.getName() + " : " + phrase);
+    }
+
+    public void openRocket(Key key, Rocket rocket) throws NoKeyException{
+        System.out.println(getName() + " пытается открыть ракету ключем");
+        if (key.isExists()){
+            rocket.setOpend(true);
+            System.out.println(rocket.getName() + " открыта");
+        } else {
+            throw new NoKeyException("Ключа нет");
+        }
+    }
+
+    public void move(GroundLocation location) {
+        System.out.println(this.getName() + " из " + this.getLocation().getType() + " идет в " + location.getType());
+        this.setLocation(location);
+    }
+
 }

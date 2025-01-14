@@ -8,12 +8,21 @@ import java.util.Objects;
 
 public class Key extends PhysicalObject {
 
-    public Key(boolean exists){
-        this.setName("Ключ");
+    private boolean exists;
+
+    public Key(String name, boolean exists){
+        this.setName(name);
         this.setExists(exists);
     }
 
-    private boolean exists;
+    public boolean isExists() {
+        return exists;
+    }
+
+    public void setExists(boolean exists) {
+        this.exists = exists;
+    }
+
 
     @Override
     public void describe(){
@@ -30,14 +39,6 @@ public class Key extends PhysicalObject {
         }
     }
 
-    public boolean isExists() {
-        return exists;
-    }
-
-    public void setExists(boolean exists) {
-        this.exists = exists;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,7 +49,7 @@ public class Key extends PhysicalObject {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(exists);
+        return Objects.hash(getName(), exists);
     }
 
     @Override

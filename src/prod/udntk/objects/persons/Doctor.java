@@ -6,6 +6,8 @@ import prod.udntk.enums.Profession;
 import prod.udntk.interfaces.Scientist;
 import prod.udntk.objects.PhysicalObject;
 
+import java.util.Objects;
+
 public final class Doctor extends Person implements Scientist {
 
     public Doctor(Mood mood, byte intelligence){
@@ -31,12 +33,12 @@ public final class Doctor extends Person implements Scientist {
 
     @Override
     public int hashCode() {
-        int hs = 0;
-        char[] name = getName().toCharArray();
-        for (char i : name){
-            hs += i - '0' * (int) getIntelligence();
-        }
-        return hs;
+        return Objects.hash(getName(),
+                getLocation(),
+                getDna(),
+                getIntelligence(),
+                getMood(),
+                getProfession());
     }
 
     @Override

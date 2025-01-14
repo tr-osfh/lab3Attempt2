@@ -25,6 +25,22 @@ public final class Sky extends SpaceObject{
         System.out.println(this.getName() + " меняет цвет на " + dye);
     }
 
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(getName(), getLocation(), getDye(), moves);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SpaceObject that = (SpaceObject) o;
+        return getLocation() == that.getLocation() &&
+                getDye() == that.getDye() &&
+                getName() == that.getName();
+    }
+
     @Override
     public String toString() {
         return "Sky{" +
@@ -33,10 +49,5 @@ public final class Sky extends SpaceObject{
                 "dye=" + getDye() +
                 "moves=" + moves +
                 '}';
-    }
-
-    @Override
-    public int hashCode(){
-        return Objects.hash(getName(), getLocation(), getDye(), moves);
     }
 }

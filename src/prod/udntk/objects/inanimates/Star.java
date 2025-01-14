@@ -8,6 +8,8 @@ import java.util.Objects;
 
 public final class Star extends SpaceObject{
 
+    private Light light;
+
     public Star(String name, SpaceLocation location, Color dye, Light light){
         super.setName(name);
         super.setLocation(location);
@@ -15,7 +17,13 @@ public final class Star extends SpaceObject{
         this.setLight(light);
     }
 
-    private Light light;
+    public Light getLight() {
+        return light;
+    }
+
+    public void setLight(Light light) {
+        this.light = light;
+    }
 
     @Override
     public void describe(){
@@ -35,20 +43,9 @@ public final class Star extends SpaceObject{
 
     }
 
-    public Light getLight() {
-        return light;
-    }
-
-    public void setLight(Light light) {
-        this.light = light;
-    }
-
     @Override
-    public String toString() {
-        return "Star{" +
-                "light=" + light +
-                ", moves=" + moves +
-                '}';
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getName(), light, getLocation(), getDye());
     }
 
     @Override
@@ -64,7 +61,13 @@ public final class Star extends SpaceObject{
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getName(), light, getLocation(), getDye());
+    public String toString() {
+        return "Star{" +
+                "name=" + getName() +
+                "location=" + getLocation() +
+                "light=" + light +
+                ", moves=" + moves +
+                '}';
     }
+
 }
