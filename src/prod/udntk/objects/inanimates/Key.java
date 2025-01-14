@@ -43,12 +43,13 @@ public class Key extends PhysicalObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Key key = (Key) o;
-        return exists == key.exists;
+        return exists == key.exists &&
+                this.getName() == key.getName();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(exists);
+        return Objects.hash(getName(), moves, exists);
     }
 
     @Override
