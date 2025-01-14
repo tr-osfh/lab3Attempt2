@@ -20,7 +20,6 @@ public class Key extends PhysicalObject {
         System.out.println("Ключ с эмблеммой рос. космоса");
     }
 
-
     public void fall(GroundLocation location) throws NoKeyException{
         if (exists) {
             System.out.printf(this.getName() + "Провалился в %s\n", location.getType());
@@ -43,12 +42,14 @@ public class Key extends PhysicalObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Key key = (Key) o;
-        return exists == key.exists;
+        return exists == key.exists &&
+                getName() == key.getName() &&
+                moves == key.moves;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(exists);
+        return Objects.hash(getName(), exists, moves);
     }
 
     @Override
