@@ -12,7 +12,8 @@ public final class Sky extends SpaceObject{
         super.setName("Небо");
         super.setLocation(SpaceLocation.CLOSESPACE);
         super.setDye(dye);
-        super.moves.add(new Moves("Описание неба", "Над головой небо"));
+
+        super.addMove(new Moves("Описание неба", "Над головой небо"));
     }
 
     @Override

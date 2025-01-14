@@ -16,10 +16,10 @@ public final class Neznayka extends Person{
         super.setMood(mood);
         super.setIntelligence(intelligence);
 
-        super.moves.add(new Moves(getName(), "Кидает лунные камни в пропасть."));
-        super.moves.add(new Moves(getName(), "Доказывает, что высадка на луну - заговор."));
-        super.moves.add(new Moves(getName(), "Теперь живет в пещере."));
-        super.moves.add(new Moves(getName(), "Остается жить на луне."));
+        super.addMove(new Moves(getName(), "Кидает лунные камни в пропасть."));
+        super.addMove(new Moves(getName(), "Доказывает, что высадка на луну - заговор."));
+        super.addMove(new Moves(getName(), "Теперь живет в пещере."));
+        super.addMove(new Moves(getName(), "Остается жить на луне."));
     }
 
 
