@@ -31,7 +31,7 @@ public final class Planet extends SpaceObject{
     public String toString() {
         return "Planet{" +
                 "designation" + getName() +
-                "moves=" + moves +
+                "moves=" + getAllMoves() +
                 ", dye=" + this.getDye() +
                 ", location=" + this.getLocation() +
                 '}';
@@ -39,7 +39,7 @@ public final class Planet extends SpaceObject{
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getLocation(), getDye());
+        return Objects.hash(getName(), getLocation(), getDye(), getAllMoves());
     }
 
     @Override
@@ -50,7 +50,7 @@ public final class Planet extends SpaceObject{
         Planet planet = (Planet) o;
         return this.getName() == planet.getName()
                 && this.getDye() == planet.getDye()
-                && this.getLocation() == planet.getLocation();
+                && this.getLocation() == planet.getLocation()
+                && this.getAllMoves().equals(planet.getAllMoves());
     }
-
 }

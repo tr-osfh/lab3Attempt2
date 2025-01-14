@@ -93,7 +93,10 @@ public final class Rocket extends MoonObject implements Transport {
         Rocket rocket = (Rocket) o;
         return this.getName() == rocket.getName()
                 && this.getLocation() == rocket.getLocation()
+                && this.getPilot().equals(rocket.getPilot())
+                && this.getAllMoves().equals(rocket.getAllMoves())
                 && this.getDye() == rocket.getDye()
+                && this.getAllMoves().equals(rocket.getAllMoves())
                 && started == rocket.started
                 && opend == rocket.opend;
     }
@@ -101,9 +104,11 @@ public final class Rocket extends MoonObject implements Transport {
     @Override
     public String toString() {
         return "Rocket{" +
-                "started=" + started +
+                "name=" + getName() +
+                ", pilote" + getPilot() +
+                ", started=" + started +
                 ", opend=" + opend +
-                ", moves=" + moves +
+                ", moves=" + getAllMoves() +
                 '}';
     }
 }

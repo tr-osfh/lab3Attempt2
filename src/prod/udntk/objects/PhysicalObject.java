@@ -31,7 +31,7 @@ public abstract class PhysicalObject {
         System.out.println(moves.get(id));
     }
 
-    protected String getAllMoves() {
+    public String getAllMoves() {
         String o = "";
         for (int i = 0; i <= moves.size(); i++) {
             o += moves.get(i);

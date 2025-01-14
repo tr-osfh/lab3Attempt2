@@ -50,7 +50,7 @@ public final class Neznayka extends Person{
     @Override
     public String toString() {
         return "Person{" +
-                "moves" + moves +
+                "moves" + getAllMoves() +
                 ", mood=" + this.getMood() +
                 ", intelligence=" + this.getIntelligence() +
                 ", location=" + this.getLocation() +

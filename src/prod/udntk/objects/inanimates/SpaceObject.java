@@ -39,7 +39,7 @@ public class SpaceObject extends PhysicalObject {
 
     @Override
     public int hashCode() {
-        return Objects.hash(location, getName(), getLocation(), getDye());
+        return Objects.hash(location, getName(), getLocation(), getDye(), getAllMoves());
     }
 
     @Override
@@ -47,15 +47,17 @@ public class SpaceObject extends PhysicalObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SpaceObject that = (SpaceObject) o;
-        return location == that.location &&
-                dye == that.dye &&
-                getName() == that.getName();
+        return location == that.location
+                && dye == that.dye
+                && getName() == that.getName()
+                && this.getAllMoves().equals(that.getAllMoves());
     }
 
     @Override
     public String toString() {
         return "SpaceObject{" +
-                "moves=" + moves +
+                "name=" + getName() +
+                ", moves=" + getAllMoves() +
                 ", dye=" + dye +
                 ", location=" + location +
                 '}';

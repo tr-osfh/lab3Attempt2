@@ -60,7 +60,7 @@ public class Key extends PhysicalObject {
         return "Key{" +
                 "name=" + getName() +
                 "exists=" + exists +
-                ", moves=" + moves +
+                ", moves=" + getAllMoves() +
                 '}';
     }
 }

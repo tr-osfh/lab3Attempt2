@@ -22,13 +22,13 @@ public final class Rock extends MoonObject {
                 "name=" + getName() +
                 "location=" + getLocation() +
                 "dye=" + getDye() +
-                "moves=" + moves +
+                "moves=" + getAllMoves() +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getLocation(), getDye());
+        return Objects.hash(getName(), getLocation(), getDye(), getAllMoves());
     }
 
     @Override
@@ -37,8 +37,9 @@ public final class Rock extends MoonObject {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Rock rock = (Rock) o;
-        return this.getName() == rock.getName()
+        return this.getName().equals(rock.getName())
                 && this.getDye() == rock.getDye()
-                && this.getLocation() == rock.getLocation();
+                && this.getLocation() == rock.getLocation()
+                && this.getAllMoves().equals(rock.getAllMoves());
     }
 }

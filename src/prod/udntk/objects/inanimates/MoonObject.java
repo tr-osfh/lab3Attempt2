@@ -49,7 +49,7 @@ public class MoonObject extends PhysicalObject {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getLocation(), location, dye);
+        return Objects.hash(getName(), getLocation(), location, dye, getAllMoves());
     }
 
     @Override
@@ -61,7 +61,8 @@ public class MoonObject extends PhysicalObject {
                 && getDye() == that.getDye()
                 && getLocation() == that.getLocation()
                 && location == that.location
-                && dye == that.dye;
+                && dye == that.dye
+                && this.getAllMoves().equals(that.getAllMoves());
     }
 
     @Override
@@ -70,7 +71,7 @@ public class MoonObject extends PhysicalObject {
                 "name=" + getName() +
                 "location=" + location +
                 ", dye=" + dye +
-                ", moves=" + moves +
+                ", moves=" + getAllMoves() +
                 '}';
     }
 }

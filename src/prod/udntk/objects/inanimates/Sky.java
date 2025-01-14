@@ -28,7 +28,7 @@ public final class Sky extends SpaceObject{
 
     @Override
     public int hashCode(){
-        return Objects.hash(getName(), getLocation(), getDye(), moves);
+        return Objects.hash(getName(), getLocation(), getDye(), getAllMoves());
     }
 
     @Override
@@ -36,9 +36,10 @@ public final class Sky extends SpaceObject{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SpaceObject that = (SpaceObject) o;
-        return getLocation() == that.getLocation() &&
-                getDye() == that.getDye() &&
-                getName() == that.getName();
+        return getLocation() == that.getLocation()
+                && getDye() == that.getDye()
+                && getName().equals(that.getName())
+                && this.getAllMoves().equals(that.getAllMoves());
     }
 
     @Override
@@ -47,7 +48,7 @@ public final class Sky extends SpaceObject{
                 "name=" + getName() +
                 "location=" + getLocation() +
                 "dye=" + getDye() +
-                "moves=" + moves +
+                "moves=" + getAllMoves() +
                 '}';
     }
 }

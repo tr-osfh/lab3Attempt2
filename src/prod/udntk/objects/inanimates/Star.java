@@ -54,10 +54,11 @@ public final class Star extends SpaceObject{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Star star = (Star) o;
-        return this.getName() == star.getName() &&
-                light == star.getLight() &&
-                this.getLocation() == star.getLocation() &&
-                this.getDye() == star.getDye();
+        return this.getName() == star.getName()
+                && light == star.getLight()
+                && this.getLocation() == star.getLocation()
+                && this.getDye() == star.getDye()
+                && this.getAllMoves().equals(star.getAllMoves());
     }
 
     @Override
@@ -66,7 +67,7 @@ public final class Star extends SpaceObject{
                 "name=" + getName() +
                 "location=" + getLocation() +
                 "light=" + light +
-                ", moves=" + moves +
+                ", moves=" + getAllMoves() +
                 '}';
     }
 
