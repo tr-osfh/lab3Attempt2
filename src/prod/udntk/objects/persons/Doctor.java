@@ -18,7 +18,7 @@ public final class Doctor extends Person implements Scientist {
         super.setMood(mood);
         super.setIntelligence(intelligence);
 
-        super.moves.add(new Moves("Осматривается", "Смотрит по строрнам."));
+        super.addMove(new Moves("Осматривается", "Смотрит по строрнам."));
     }
 
     @Override

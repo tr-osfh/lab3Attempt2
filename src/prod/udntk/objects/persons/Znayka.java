@@ -17,9 +17,9 @@ public final class Znayka extends Person implements Scientist {
         super.setMood(mood);
         super.setIntelligence(intelligence);
 
-        super.moves.add(new Moves(getName(), "Пытается успокоить незнайку"));
-        super.moves.add(new Moves(getName(), "Громко говорит о лунных пейзажах"));
-        super.moves.add(new Moves(getName(), "Остается жить на луне."));
+        super.addMove(new Moves(getName(), "Пытается успокоить незнайку"));
+        super.addMove(new Moves(getName(), "Громко говорит о лунных пейзажах"));
+        super.addMove(new Moves(getName(), "Остается жить на луне."));
     }
 
     @Override
