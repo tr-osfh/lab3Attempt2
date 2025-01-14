@@ -8,8 +8,8 @@ import java.util.Objects;
 
 public class Key extends PhysicalObject {
 
-    public Key(boolean exists){
-        this.setName("Ключ");
+    public Key(String name, boolean exists){
+        this.setName(name);
         this.setExists(exists);
     }
 
