@@ -9,17 +9,13 @@ import prod.udntk.objects.PhysicalObject;
 import java.util.Objects;
 
 public class SpaceObject extends PhysicalObject {
-    public SpaceObject(){
-        this.dye = Color.NONE;
-        this.location = SpaceLocation.NONE;
-    }
 
     private SpaceLocation location;
     private Color dye;
 
-    @Override
-    public void describe(){
-        System.out.println(this.getName() + " где то высоко над головой");
+    public SpaceObject(){
+        this.dye = Color.NONE;
+        this.location = SpaceLocation.NONE;
     }
 
     public SpaceLocation getLocation() {
@@ -38,6 +34,15 @@ public class SpaceObject extends PhysicalObject {
         this.dye = dye;
     }
 
+    @Override
+    public void describe(){
+        System.out.println(this.getName() + " где то высоко над головой");
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(location, getName(), getLocation(), getDye());
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -45,12 +50,8 @@ public class SpaceObject extends PhysicalObject {
         if (o == null || getClass() != o.getClass()) return false;
         SpaceObject that = (SpaceObject) o;
         return location == that.location &&
-                dye == that.dye;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(location, getName(), getLocation(), getDye());
+                dye == that.dye &&
+                getName() == that.getName();
     }
 
     @Override

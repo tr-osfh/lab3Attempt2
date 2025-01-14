@@ -9,6 +9,11 @@ import prod.udntk.objects.persons.Person;
 import java.util.Objects;
 
 public final class Rocket extends MoonObject implements Transport {
+
+    private boolean started;
+    private boolean opend;
+    private String pilot;
+
     public Rocket(GroundLocation location, Color dye){
         super.setName("Ракета");
         this.setStarted(false);
@@ -17,9 +22,30 @@ public final class Rocket extends MoonObject implements Transport {
         super.setDye(dye);
     }
 
-    private boolean started;
-    private boolean opend;
-    private String pilot;
+    public String getPilot() {
+        return pilot;
+    }
+
+    public void setPilot(String pilot) {
+        this.pilot = pilot;
+    }
+
+    public boolean isStarted() {
+        return started;
+    }
+
+    public void setStarted(boolean started) {
+        this.started = started;
+    }
+
+    public boolean isOpend() {
+        return opend;
+    }
+
+    public void setOpend(boolean opend) {
+        this.opend = opend;
+    }
+
 
     @Override
     public void startEngine(){
@@ -55,28 +81,9 @@ public final class Rocket extends MoonObject implements Transport {
         }
     }
 
-    public String getPilot() {
-        return pilot;
-    }
-
-    public void setPilot(String pilot) {
-        this.pilot = pilot;
-    }
-
-    public boolean isStarted() {
-        return started;
-    }
-
-    public void setStarted(boolean started) {
-        this.started = started;
-    }
-
-    public boolean isOpend() {
-        return opend;
-    }
-
-    public void setOpend(boolean opend) {
-        this.opend = opend;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getLocation(), getDye(), started, opend, pilot);
     }
 
     @Override
@@ -89,11 +96,6 @@ public final class Rocket extends MoonObject implements Transport {
                 && this.getDye() == rocket.getDye()
                 && started == rocket.started
                 && opend == rocket.opend;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getLocation(), getDye(), started, opend, pilot);
     }
 
     @Override

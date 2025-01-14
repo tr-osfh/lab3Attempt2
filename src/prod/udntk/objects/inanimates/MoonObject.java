@@ -8,27 +8,12 @@ import java.util.Objects;
 
 public class MoonObject extends PhysicalObject {
 
-    public MoonObject(){
-        this.location = GroundLocation.NONE;
-        this.dye = Color.NONE;
-    }
-
     private GroundLocation location;
     private Color dye;
 
-    @Override
-    public void describe(){
-        System.out.println(this.getName() + " виднеется в " + this.getLocation().getType());
-    }
-
-
-    public void changeColor(Color dye){
-        this.setDye(dye);
-        System.out.println(this.getName() + " меняет цвет на " + dye);
-    }
-
-    public void changeColor(SpaceObject lightSource){
-        System.out.println(this.getName() + "освещен" + lightSource.getName());
+    public MoonObject(){
+        this.location = GroundLocation.NONE;
+        this.dye = Color.NONE;
     }
 
     public GroundLocation getLocation() {
@@ -49,6 +34,25 @@ public class MoonObject extends PhysicalObject {
     }
 
     @Override
+    public void describe(){
+        System.out.println(this.getName() + " виднеется в " + this.getLocation().getType());
+    }
+
+    public void changeColor(Color dye){
+        this.setDye(dye);
+        System.out.println(this.getName() + " меняет цвет на " + dye);
+    }
+
+    public void changeColor(SpaceObject lightSource){
+        System.out.println(this.getName() + "освещен" + lightSource.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getLocation(), location, dye);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -58,11 +62,6 @@ public class MoonObject extends PhysicalObject {
                 && getLocation() == that.getLocation()
                 && location == that.location
                 && dye == that.dye;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getLocation(), location, dye);
     }
 
     @Override

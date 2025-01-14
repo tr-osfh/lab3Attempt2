@@ -4,6 +4,8 @@ import prod.stuff.Moves;
 import prod.udntk.enums.Mood;
 import prod.udntk.enums.Profession;
 
+import java.util.Objects;
+
 public final class Neznayka extends Person{
 
     public Neznayka(Mood mood, byte intelligence){
@@ -23,12 +25,12 @@ public final class Neznayka extends Person{
 
     @Override
     public int hashCode() {
-        int hs = 0;
-        char[] name = getName().toCharArray();
-        for (char i : name){
-            hs += i - '0' * (int) getIntelligence();
-        }
-        return hs;
+        return Objects.hash(getName(),
+                getLocation(),
+                getDna(),
+                getIntelligence(),
+                getMood(),
+                getProfession());
     }
 
     @Override

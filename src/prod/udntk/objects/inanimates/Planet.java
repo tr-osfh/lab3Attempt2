@@ -42,6 +42,7 @@ public final class Planet extends SpaceObject{
         return Objects.hash(getName(), getLocation(), getDye());
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
