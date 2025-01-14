@@ -57,8 +57,9 @@ public final class Znayka extends Person implements Scientist {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "moves" + getAllMoves() +
+        return "Znayka{" +
+                "name =" + this.getName() +
+                ", moves" + this.getAllMoves() +
                 ", mood=" + this.getMood() +
                 ", intelligence=" + this.getIntelligence() +
                 ", location=" + this.getLocation() +

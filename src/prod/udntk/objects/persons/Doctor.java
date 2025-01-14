@@ -57,8 +57,9 @@ public final class Doctor extends Person implements Scientist {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "moves" + getAllMoves() +
+        return "Doctor{" +
+                "name =" + this.getName() +
+                ", moves" + this.getAllMoves() +
                 ", mood=" + this.getMood() +
                 ", intelligence=" + this.getIntelligence() +
                 ", location=" + this.getLocation() +
