@@ -26,11 +26,6 @@ public final class Doctor extends Person implements Scientist {
         System.out.println(this.getName() + " оценивающе окидывает окружение взглядом");
     }
 
-    public void explore(PhysicalObject obj){
-        System.out.println(this.getName() + "осматривает" + obj.getName());
-    }
-
-
     @Override
     public int hashCode() {
         return Objects.hash(getName(),

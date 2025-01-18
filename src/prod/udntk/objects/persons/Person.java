@@ -93,5 +93,4 @@ public class Person extends PhysicalObject {
         System.out.println(this.getName() + " из " + this.getLocation().getType() + " идет в " + location.getType());
         this.setLocation(location);
     }
-
 }
